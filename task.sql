@@ -26,7 +26,8 @@ CREATE TABLE Orders (
 CREATE TABLE OrderItems (
 	ID INT AUTO_INCREMENT,
     OrderID INT,
+    FOREIGN KEY (OrderID) REFERENCES Orders(ID) ON DELETE SET NULL,
     ProductID INT,
-    FOREIGN KEY (OrderID) REFERENCES Orders(<referenced-column-name>) ON DELETE SET NULL
+    FOREIGN KEY (ProductID) REFERENCES Products(ID) ON DELETE SET NULL,
     PRIMARY KEY (ID)
 );
